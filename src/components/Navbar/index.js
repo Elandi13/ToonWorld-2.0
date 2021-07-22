@@ -22,12 +22,12 @@ const Navbar = ({currentUser, setCurrentUser, toggle}) => {
                             </NavItem>
                             
                             <NavItem>
-                                {!currentUser && <NavLinks to="/login"> Login
+                                {!currentUser  && <NavLinks to="/login"> Login
                                 </NavLinks> } 
                             </NavItem>
 
                             <NavItem>
-                                {currentUser && <NavLinks to="/logout" onClick={()=> setCurrentUser(null)} > Logout
+                                {currentUser && <NavLinks to="/" onClick={()=> setCurrentUser(null)} > Logout
                                 </NavLinks> }
                             </NavItem>
                         </NavMenu>

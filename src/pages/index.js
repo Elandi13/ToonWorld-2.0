@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 
 const Home = () => {
-    const [currentUser, setCurrentUser] = useState(null)
+    const [currentUser, setCurrentUser] = useState(true)
     const [isOpen, setIsOpen] = useState(false)
 
     const toggle = () => {
