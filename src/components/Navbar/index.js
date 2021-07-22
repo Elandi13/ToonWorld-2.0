@@ -1,13 +1,13 @@
 import React from 'react'
 import{Nav, NavbarContainer, NavLogo, MobileIcon, NavMenu, NavItem, NavLinks} from './NavbarElements'
 import {FaBars} from 'react-icons/fa'
-const Navbar = ({currentUser, setCurrentUser}) => {
+const Navbar = ({currentUser, setCurrentUser, toggle}) => {
     return (
         <React.Fragment>
             <Nav>
                 <NavbarContainer>
                     <NavLogo to='/'> ToonWorld </NavLogo>
-                    <MobileIcon>
+                    <MobileIcon onClick={toggle}>
                         <FaBars/>
                     </MobileIcon>
                         <NavMenu>

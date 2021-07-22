@@ -1,9 +1,9 @@
 import React from 'react'
 import { SidebarContainer, Icon, CloseIcon, SidebarWrapper, SidebarMenu, SidebarLink } from './SidebarElements'
-const Sidebar = ({currentUser, setCurrentUser}) => {
+const Sidebar = ({currentUser, setCurrentUser, toggle, isOpen}) => {
     return (
-        <SidebarContainer>
-            <Icon>
+        <SidebarContainer isOpen={isOpen} onClick={toggle}>
+            <Icon onClick={toggle}>
                 <CloseIcon/>
             </Icon>
             <SidebarWrapper>
@@ -20,8 +20,8 @@ const Sidebar = ({currentUser, setCurrentUser}) => {
                         Login
                     </SidebarLink>}
 
-                    {currentUser && <SidebarLink to="/logout">
-                        Login
+                    {currentUser && <SidebarLink to="/logout" onClick={()=> setCurrentUser(null)}>
+                        Logout
                     </SidebarLink>}
                 </SidebarMenu>
             </SidebarWrapper>

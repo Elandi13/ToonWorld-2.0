@@ -4,7 +4,11 @@ import Sidebar from '../components/Sidebar'
 
 const Home = () => {
     const [currentUser, setCurrentUser] = useState(null)
+    const [isOpen, setIsOpen] = useState(false)
 
+    const toggle = () => {
+        setIsOpen(!isOpen)
+    }
 
   useEffect(()=>{
     const token = null
@@ -16,11 +20,12 @@ const Home = () => {
       })
     }
   },[])
+  
 
     return (
         <React.Fragment>
-            <Sidebar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
-            <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+            <Sidebar currentUser={currentUser} setCurrentUser={setCurrentUser} isOpen={isOpen} toggle={toggle}/>
+            <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} toggle={toggle}/>
         </React.Fragment>
     )   
 }
